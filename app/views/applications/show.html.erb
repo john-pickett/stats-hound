@@ -8,5 +8,10 @@
   <%= @application.url %>
 </p>
 
+<p>
+  <strong>Events:</strong>
+  <%= render partial: 'events/event' %>
+</p>
+
 <%= link_to 'Edit Website', edit_application_path(@application) %> |
 <%= link_to 'Your Websites', applications_path %>

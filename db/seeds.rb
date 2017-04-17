@@ -1,5 +1,5 @@
-#Create Users
 
+#Create Users
 5.times do
   User.create!(
   email: Faker::Internet.email,
@@ -8,6 +8,7 @@
 end
 users = User.all
 
+# Create Applications
 25.times do
   Application.create!(
   name: Faker::Name.unique.name,
@@ -17,7 +18,15 @@ users = User.all
 end
 applications = Application.all
 
+# Create Events
+100.times do
+  Event.create!(
+  name: Faker::LordOfTheRings.character,
+  application: applications.sample
+  )
+end
 
+# Update first user to me
 user = User.first
 user.update_attributes!(
   email: "john.pickett@gmail.com",
@@ -27,3 +36,4 @@ user.update_attributes!(
 puts "Seeding Finished"
 puts "#{User.count} users created"
 puts "#{Application.count} websites created"
+puts "#{Event.count} events created"

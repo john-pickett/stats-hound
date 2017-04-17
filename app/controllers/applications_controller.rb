@@ -10,6 +10,8 @@ class ApplicationsController < ApplicationController
   # GET /applications/1
   # GET /applications/1.json
   def show
+    @application = Application.find(params[:id])
+    @events = @application.events.group_by(&:name).count
   end
 
   # GET /applications/new
