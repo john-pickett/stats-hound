@@ -4,7 +4,7 @@ class ApplicationsController < ApplicationController
   # GET /applications
   # GET /applications.json
   def index
-    @applications = Application.all
+    @applications = Application.where(user_id: current_user.id)
   end
 
   # GET /applications/1
