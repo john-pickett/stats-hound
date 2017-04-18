@@ -4,14 +4,20 @@ class ApplicationsController < ApplicationController
   # GET /applications
   # GET /applications.json
   def index
-    @applications = Application.where(user_id: current_user.id)
+    if current_user
+      @applications = Application.where(user_id: current_user.id)
+    else
+      redirect_to root_path
+    end
   end
 
   # GET /applications/1
   # GET /applications/1.json
   def show
     @application = Application.find(params[:id])
-    @events = @application.events.group_by(&:name).count
+    @events = @application.events
+    @event_count = @application.events.count
+    @pageviews = @events.where(name: "pageview")
   end
 
   # GET /applications/new

@@ -9,8 +9,38 @@
 </p>
 
 <p>
-  <strong>Events:</strong>
-  <%= render partial: 'events/event' %>
+  <strong>Event Count:</strong>
+  <%= @event_count %>
+</p>
+
+<p>
+  <strong>Events</strong>
+  <%= @events %>
+  <p>
+    Pageviews: <%= @pageviews.count %>
+  </p>
+  <p>
+    <strong>Pageviews Chart</strong>
+    <%= line_chart @pageviews.group_by_day(:created_at).count %>
+  </p>
+
+<p>
+  Total Events Chart
+  <%= line_chart @events.group_by_day(:created_at).count %>
+</p>
+
+<strong>Don't Need, Here for Reference</strong>
+
+<p>pie
+  <%= pie_chart @events.group(:name).count %>
+</p>
+
+<p>line
+  <%= line_chart @events.group(:name).count %>
+</p>
+
+<p>bar
+  <%= bar_chart @events.group(:name).count %>
 </p>
 
 <%= link_to 'Edit Website', edit_application_path(@application) %> |

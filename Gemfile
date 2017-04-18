@@ -33,6 +33,10 @@ gem 'bootstrap-sass'
 gem 'devise'
 # Faker for database seeding
 gem 'faker'
+# Chartkick for graphs
+gem 'chartkick'
+# Groupdate
+gem 'groupdate'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password

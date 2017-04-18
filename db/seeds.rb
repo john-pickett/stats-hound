@@ -1,6 +1,7 @@
+require 'event_data'
 
 #Create Users
-5.times do
+3.times do
   User.create!(
   email: Faker::Internet.email,
   password: Faker::Number.number(8)
@@ -11,18 +12,19 @@ users = User.all
 # Create Applications
 25.times do
   Application.create!(
-  name: Faker::Name.unique.name,
-  url: Faker::Address.city,
+  name: Faker::Internet.domain_name,
+  url: Faker::Internet.url,
   user: users.sample
   )
 end
 applications = Application.all
 
 # Create Events
-100.times do
+1000.times do
   Event.create!(
-  name: Faker::LordOfTheRings.character,
-  application: applications.sample
+  name: EventData.event_name,
+  application: applications.sample,
+  created_at: EventData.event_time
   )
 end
 
