@@ -18,6 +18,9 @@ class ApplicationsController < ApplicationController
     @events = @application.events
     @event_count = @application.events.count
     @pageviews = @events.where(name: "pageview")
+    @new_users = @events.where(name: "new lead")
+    @sales = @events.where(name: "sale")
+    @uniques = @events.where(name: "unique")
   end
 
   # GET /applications/new
@@ -43,6 +46,7 @@ class ApplicationsController < ApplicationController
         format.json { render json: @application.errors, status: :unprocessable_entity }
       end
     end
+
   end
 
   # PATCH/PUT /applications/1
