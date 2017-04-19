@@ -1,24 +1,13 @@
-# README
+# Code
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+var statshound = {};
 
-Things you may want to cover:
+statshound.report = function(eventName) {
+  var event = {event: { name: eventName }};
+  var request = new XMLHttpRequest();
+  request.open("POST", "https://stats-hound-97714.herokuapp.com/api/events", true);
+  request.setRequestHeader('Content-Type', 'application/json');
+  request.send(JSON.stringify(event));
+  }
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+statshound.report("pageview");
