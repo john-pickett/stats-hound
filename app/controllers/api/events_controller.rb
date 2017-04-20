@@ -3,8 +3,6 @@ class API::EventsController < ApplicationController
   skip_before_action :verify_authenticity_token
   before_filter :set_access_control_headers
 
-
-
   def create
     registered_application = Application.find_by(url: request.env['HTTP_ORIGIN'])
 
