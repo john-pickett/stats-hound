@@ -37,6 +37,8 @@ gem 'faker'
 gem 'chartkick'
 # Groupdate
 gem 'groupdate'
+# Screencap for website previews
+gem 'screencap'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password

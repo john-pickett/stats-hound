@@ -2,7 +2,7 @@ module EventData
 
   def self.event_name
     event_name = ""
-    all_events = ["pageview", "click", "new lead"]
+    all_events = ["pageview", "click", "new lead", "sale"]
     event_name += all_events.sample
   end
 

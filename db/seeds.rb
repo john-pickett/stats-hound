@@ -20,11 +20,11 @@ end
 applications = Application.all
 
 # Create Events
-1000.times do
+10000.times do
   Event.create!(
   name: EventData.event_name,
   application: applications.sample,
-  created_at: EventData.event_time
+  created_at: Faker::Time.backward(90, :morning)
   )
 end
 
