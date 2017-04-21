@@ -18,17 +18,18 @@ class ApplicationsController < ApplicationController
 
     @application = Application.find(params[:id])
     @events = @application.events
-    @event_count = @application.events.count
+
     @pageviews = @events.where(name: "pageview")
-    @pageviews_30 = @pageviews.where('created_at > ?', days_to_view.days.ago)
+    @pageviews_30 = @pageviews.where('created_at > ?', 30.days.ago)
+    @pageviews_chart = @pageviews.where('created_at > ?', days_to_view.days.ago).group_by_day(:created_at).count
+
     @new_users = @events.where(name: "new lead")
-    @new_users_30 = @new_users.where('created_at > ?', days_to_view.days.ago)
+    @new_users_30 = @new_users.where('created_at > ?', 30.days.ago)
+    @new_users_chart = @new_users.where('created_at > ?', days_to_view.days.ago).group_by_day(:created_at).count
+
     @sales = @events.where(name: "sale")
-    @sales_30 = @sales.where('created_at > ?', days_to_view.days.ago)
-    @uniques = @events.where(name: "unique")
-    @pageviews_chart = @pageviews_30.group_by_day(:created_at).count
-    @new_users_chart = @new_users.group_by_day(:created_at).count
-    @sales_chart = @sales.group_by_day(:created_at).count
+    @sales_30 = @sales.where('created_at > ?', 30.days.ago)
+    @sales_chart = @sales.where('created_at > ?', days_to_view.days.ago).group_by_day(:created_at).count
 
   end
 
