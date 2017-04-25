@@ -31,3 +31,44 @@ th {
 td {
   padding: 10px;
 }
+
+.stats-glance-row {
+  margin: 20px 0;
+}
+
+.stats-glance {
+  width: 24%;
+  margin: 5px;
+  border-radius: 5px;
+  min-height: 150px;
+  color: white;
+  padding-top: 20px;
+}
+
+.pageviews-box {
+  background-color: #FF533C;
+}
+
+.new-users-box {
+  background-color: #00B050;
+}
+
+.sales-box {
+  background-color: #00CAF9;
+}
+
+.messages-box {
+  background-color: #0080C8;
+}
+
+footer {
+  min-height: 100px;
+  text-align: center;
+  padding-top: 25px;
+}
+
+.footer-divider {
+  width: 80%;
+  border-top: 3px solid #f8f8f8;
+  border-bottom: 1px solid #f8f8f8;
+}

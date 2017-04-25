@@ -23,7 +23,7 @@ class ApplicationsController < ApplicationController
     @pageviews_30 = @pageviews.where('created_at > ?', 30.days.ago)
     @pageviews_chart = @pageviews.where('created_at > ?', days_to_view.days.ago).group_by_day(:created_at).count
 
-    @new_users = @events.where(name: "new lead")
+    @new_users = @events.where(name: "new user")
     @new_users_30 = @new_users.where('created_at > ?', 30.days.ago)
     @new_users_chart = @new_users.where('created_at > ?', days_to_view.days.ago).group_by_day(:created_at).count
 
@@ -31,6 +31,9 @@ class ApplicationsController < ApplicationController
     @sales_30 = @sales.where('created_at > ?', 30.days.ago)
     @sales_chart = @sales.where('created_at > ?', days_to_view.days.ago).group_by_day(:created_at).count
 
+    @messages = @events.where(name: "message")
+    @messages_30 = @messages.where('created_at > ?', 30.days.ago)
+    @messages_chart = @messages.where('created_at > ?', days_to_view.days.ago).group_by_day(:created_at).count
   end
 
   # GET /applications/new

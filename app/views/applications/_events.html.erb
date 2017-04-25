@@ -1,21 +1,30 @@
 <div class="row">
-  <div class="col-md-4">
-    <h2 class="text-center"><%= @application.name %></h2>
-      <h3 class="text-center"><%= @application.url %></h3>
-      <p class="text-center">
-        <%= link_to 'Edit Website Details', edit_application_path(@application) %> |
-        <%= link_to 'Back To Your Websites', applications_path %>
-      </p>
-  </div>
-<div class="col-md-8">
-    <h2 class="text-center">Your Website At-A-Glance</h2>
-    <h4 class="text-center"><em><strong>Last 30 Days</strong></em></h4>
-    <h3 class="text-center">Pageviews: <%= @pageviews_30.count %> </h3>
-    <h3 class="text-center">New Users: <%= @new_users_30.count %></h3>
-    <h3 class="text-center">Sales: <%= @sales_30.count %></h3>
-  </div>
+  <h2 class="text-center">Dashboard</h2>
+  <h4 class="text-center"><%= @application.name %> | <%= @application.url %></h4>
+    <p class="text-center">
+      <%= link_to 'Edit Website Details', edit_application_path(@application) %> |
+      <%= link_to 'Back To Your Websites', applications_path %>
+    </p>
+  <h2 class="text-center">Stats For Last 30 Days</h2>
 </div> <!-- end of row -->
-<div class=
+<div class="row stats-glance-row">
+  <div class="col-md-2 stats-glance pageviews-box">
+    <h2><%= @pageviews_30.count %></h2>
+    <h4>Total Pageviews</h4>
+  </div>
+  <div class="col-md-2 stats-glance new-users-box">
+    <h2><%= @new_users_30.count %></h2>
+    <h4>Registered Users</h4>
+  </div>
+  <div class="col-md-2 stats-glance sales-box">
+    <h2><%= @sales_30.count %></h2>
+    <h4>New Sales</h4>
+  </div>
+  <div class="col-md-2 stats-glance messages-box">
+    <h2><%= @messages_30.count %></h2>
+    <h4>Messages Sent</h4>
+  </div>
+</div>
 <div>
   <h2 class="text-center">In-Depth Traffic and Stats</h2>
     <div class="text-center">
@@ -25,11 +34,13 @@
       <% end %>
     </div>
 
-  <h3>Pageviews: <%= @pageviews.count %></h3>
+  <h3>Pageviews: <%= @pageviews_chart.count %></h3>
   <strong>Pageviews by day</strong>
-  <%= area_chart @pageviews_chart %>
-  <h3>New Users: <%= @new_users.count %></h3>
-  <%= area_chart @new_users_chart, colors: ["#00FF00"] %>
-  <h3>Sales: <%= @sales.count %></h3>
-  <%= area_chart @sales_chart, colors: ["#FF0000"] %>
+  <%= area_chart @pageviews_chart, colors: ["#FF533C"] %>
+  <h3>New Users: <%= @new_users_chart.count %></h3>
+  <%= area_chart @new_users_chart, colors: ["#00B050"] %>
+  <h3>Sales: <%= @sales_chart.count %></h3>
+  <%= area_chart @sales_chart, colors: ["#00CAF9"] %>
+  <h3>Messages: <%= @messages_chart.count %></h3>
+  <%= area_chart @messages_chart, colors: ["#0080C8"] %>
 </div>
