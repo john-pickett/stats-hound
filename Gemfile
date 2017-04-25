@@ -39,6 +39,8 @@ gem 'chartkick'
 gem 'groupdate'
 # Screencap for website previews
 gem 'screencap'
+# Font Awesome
+gem 'font-awesome-sass'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password

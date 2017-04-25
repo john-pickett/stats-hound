@@ -1,15 +1,17 @@
-<h2 class="text-center">Websites We're Tracking For You</h2>
+<div class="container">
+  <h2 class="text-center">Websites We're Tracking For You</h2>
 
-<div class="col-md-8">
-  <% if @applications.count == 0 %>
-    <%= render partial: 'users/new_user' %>
-  <% else %>
-    <%= render partial: 'applications/websites' %>
-  <% end %>
-</div>
+  <div class="col-md-8">
+    <% if @applications.count == 0 %>
+      <%= render partial: 'users/new_user' %>
+    <% else %>
+      <%= render partial: 'applications/websites' %>
+    <% end %>
+  </div>
 
-<div class="col-md-4 pull-right">
-  <p class="text-center">
-    <%= link_to 'Track A New Website', new_application_path, class: 'btn btn-success'%>
-  </p>
+  <div class="col-md-4 pull-right">
+    <p class="text-center">
+      <%= link_to 'Track A New Website', new_application_path, class: 'btn btn-success'%>
+    </p>
+  </div>
 </div>
