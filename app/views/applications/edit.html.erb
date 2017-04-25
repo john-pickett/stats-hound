@@ -1,11 +1,13 @@
-<h1>Editing Application</h1>
+<div class="container">
+  <h1>Editing Application</h1>
 
-<div class="col-md-8">
-  <%= render 'form', application: @application %>
-  <%= link_to 'Back to Website Details', @application %> |
-  <%= link_to 'Your Websites', applications_path %>
-</div>
+  <div class="col-md-8">
+    <%= render 'form', application: @application %>
+    <%= link_to 'Back to Website Details', @application %> |
+    <%= link_to 'Your Websites', applications_path %>
+  </div>
 
-<div class="col-md-4">
-  <%= link_to "Delete This Website", @application, method: :delete, data: { confirm: 'Are you sure you want to delete this website? This cannot be undone.' }, class: 'btn btn-danger' %>
+  <div class="col-md-4">
+    <%= link_to "Delete This Website", @application, method: :delete, data: { confirm: 'Are you sure you want to delete this website? This cannot be undone.' }, class: 'btn btn-danger' %>
+  </div>
 </div>

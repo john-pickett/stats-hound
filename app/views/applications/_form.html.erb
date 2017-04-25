@@ -17,7 +17,7 @@
       <%= f.text_field :name %>
     </div>
 
-    <div class="field">
+    <div class="field pad-tb">
       <%= f.label :url %><br>
       <%= f.text_field :url %>
     </div>
@@ -26,7 +26,7 @@
       <%= f.hidden_field :user_id, :value => current_user.id %>
     </div>
 
-    <div class="actions">
+    <div class="actions pad-tb">
       <%= f.submit "Save Changes", class: 'btn btn-success' %>
     </div>
   <% end %>
