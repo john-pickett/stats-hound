@@ -1,22 +1,23 @@
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Url</th>
-      <th>Date Created</th>
-      <th colspan="3"></th>
+      <th>Website Name</th>
+      <th>URL</th>
+      <th>Tracking Since</th>
     </tr>
   </thead>
 
   <tbody>
+    <tr>
+      <td><em>Click To View Website Stats<?em></td>
+      <td><em>Click To Visit Website</em></td>
+      <td></td>
+    </tr>
     <% @applications.each do |application| %>
       <tr>
-        <td><%= application.name %></td>
-        <td><%= application.url %></td>
+        <td><%= link_to application.name, application %></td>
+        <td><%= link_to application.url, application.url, target: :_blank %></td>
         <td><%= application.created_at.to_date.to_formatted_s(:long_ordinal) %></td>
-        <td><%= link_to 'Show', application %></td>
-        <td><%= link_to 'Edit', edit_application_path(application) %></td>
-        <td><%= link_to 'Delete', application, method: :delete, data: { confirm: 'Are you sure you want to delete this website? This cannot be undone.' } %></td>
       </tr>
     <% end %>
   </tbody>
