@@ -21,7 +21,7 @@
 }
 
 .content {
-  min-height: 550px;
+  min-height: 600px;
 }
 
 table {
@@ -82,8 +82,7 @@ footer {
 
 .footer-divider {
   width: 80%;
-  border-top: 3px solid #A9A9A9;
-  border-bottom: 1px solid #A9A9A9;
+  border-top: 1px solid #C4C4C4;
 }
 
 .footer_social ul {
@@ -140,7 +139,7 @@ footer {
     padding-top: 10px;
 }
 
-a.btn-banner {
+.btn-banner {
     border: 1px solid #cdcdcd;
     padding: 12px 22px;
     line-height: 0px;

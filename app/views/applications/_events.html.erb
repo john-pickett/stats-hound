@@ -18,18 +18,19 @@
   </div>
   <div class="col-md-2 stats-glance sales-box">
     <h2><%= @sales_30.count %></h2>
-    <h4>New Sales</h4>
+    <h4>Items Sold</h4>
   </div>
   <div class="col-md-2 stats-glance messages-box">
     <h2><%= @messages_30.count %></h2>
-    <h4>Messages Sent</h4>
+    <h4>New Messages</h4>
   </div>
 </div>
 <div>
   <h2 class="text-center">In-Depth Traffic and Stats</h2>
     <div class="text-center">
+      <p>Select Date Range</p>
       <%= form_tag application_path(@application), method: :get do %>
-        <%= select_tag(:days, options_for_select([["Last 30 Days", 30], ["Last 60 Days", 60], ["Last 90 Days", 90]]))  %>
+        <%= select_tag(:days, options_for_select([["Last 30 Days", 30], ["Last 60 Days", 60], ["Last 90 Days", 90]], params[:days]))  %>
         <%= submit_tag "Update" %>
       <% end %>
     </div>
