@@ -1,6 +1,11 @@
-# Code
+# Stats Hound
+## Easily Track Traffic To Your Website
 
-var statshound = {};
+Using Stats Hound is very simple. You'll put the code below into every page on your site that you want to track.
+Stats Hound will record every event and save it with the name in quotes in the last line.</p>
+
+## Tracking Code
+```var statshound = {};
 
 statshound.report = function(eventName) {
   var event = {event: { name: eventName }};
@@ -10,4 +15,10 @@ statshound.report = function(eventName) {
   request.send(JSON.stringify(event));
   }
 
+statshound.report("event");
+```
+## Sample events
 statshound.report("pageview");
+statshound.report("new user");
+statshound.report("sale");
+statshound.report("message");

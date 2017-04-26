@@ -1,20 +1,17 @@
-<h2>Here's a tutorial on installing the tracking code</h2>
+<div class="col-md-6">
+  <h3>Tracking Code Tutorial</h3>
 
-var blocmetrics = {};
+  <p>Using Stats Hound is very simple. You'll put the code below into every page on your site that you want to track.
+  Stats Hound will record every event and save it with the name in quotes in the last line.</p>
 
-blocmetrics.report = function(eventName) {
-   // #1
-   var event = {event: { name: eventName }};
+  <h3>Tracking Code</h3>
 
-   // #2
-   var request = new XMLHttpRequest();
-   // #3
-   request.open("POST", "http://localhost:3000/api/events", true);
-   // #4
-   request.setRequestHeader('Content-Type', 'application/json');
-   // #5
-   request.send(JSON.stringify(event));
-}
+    <script src="https://gist.github.com/john-pickett/b8f64fe230c6a50ffe5ddf12bf003262.js"></script>
 
-call it with
-blocmetrics.report("event")
+  <h3>Sample Events</h3>
+
+  <p>statshound.report("pageview");</p>
+  <p>statshound.report("new user");</p>
+  <p>statshound.report("sale");</p>
+  <p>statshound.report("message");</p>
+</div>
